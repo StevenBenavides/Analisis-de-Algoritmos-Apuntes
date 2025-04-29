@@ -179,3 +179,82 @@ A = [8, 5, 2, 9]
 ```text
 [2, 5, 8, 9]
 ```
+
+
+# Apuntes: 2.3 Designing Algorithms
+
+📘 Fuente: Cormen et al., *Introduction to Algorithms*, 4ª edición (2022)
+
+---
+
+## ¿Qué es diseñar algoritmos?
+
+Diseñar algoritmos consiste en construir una **solución paso a paso** para resolver un problema computacional de manera eficiente, correcta y general. No es solo codificar: es **pensar cómo resolver** el problema antes de programarlo.
+
+---
+
+## Etapas del diseño de algoritmos
+
+1. **Comprensión del problema**  
+   - ¿Qué se pide exactamente?
+   - ¿Qué entradas se reciben?
+   - ¿Qué salida se espera?
+
+2. **Diseño de una estrategia**
+   - Selección de un enfoque adecuado:
+     - Divide y vencerás
+     - Programación dinámica
+     - Algoritmos voraces
+     - Fuerza bruta (en problemas pequeños)
+
+3. **Especificación del algoritmo**
+   - Pseudocódigo o lenguaje informal
+
+4. **Análisis**
+   - Tiempo de ejecución
+   - Uso de espacio (memoria)
+   - Notación Big-O
+
+5. **Implementación**
+   - Traducir el algoritmo a código
+
+6. **Prueba**
+   - Validar con diferentes entradas, incluyendo casos límite
+
+---
+
+## Ejemplo: Buscar el número mayor en un arreglo
+
+### Problema:
+Dado un arreglo `A` con `n` números, encontrar el **valor máximo**.
+
+---
+
+### Diseño del algoritmo
+
+**Estrategia**: Recorremos el arreglo una vez y vamos guardando el valor más alto encontrado.
+
+---
+
+### Pseudocódigo
+
+```text
+Maximo(A)
+  max = A[1]
+  for i = 2 to A.length
+    if A[i] > max
+      max = A[i]
+  return max
+```
+
+### Ejemplo con Prueba de Escritorio:
+
+```text
+A = [4, 17, 3, 21, 8]
+```
+
+![image](https://github.com/user-attachments/assets/70417bff-0e94-412d-a2b4-67838321aad6)
+
+### Resultado: 
+
+El número mayor es: 21
