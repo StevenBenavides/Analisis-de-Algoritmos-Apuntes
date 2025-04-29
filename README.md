@@ -94,10 +94,6 @@ Buscar el número `23` en la lista:
 
 # Apuntes: Insertion Sort y Análisis de Algoritmos
 
-**Lecturas:**
-- Cormen et al., 2022 - *Introduction to Algorithms* (Capítulo 2: Getting Started)
-- Brassard & Bratley, 2006 - *Fundamentals of Algorithmics* (Capítulo 2: Algoritmia elemental)
-
 ---
 
 ## 2.1 Insertion Sort
@@ -182,8 +178,6 @@ A = [8, 5, 2, 9]
 
 
 # Apuntes: 2.3 Designing Algorithms
-
-📘 Fuente: Cormen et al., *Introduction to Algorithms*, 4ª edición (2022)
 
 ---
 
