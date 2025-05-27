@@ -252,3 +252,19 @@ A = [4, 17, 3, 21, 8]
 ### Resultado: 
 
 El número mayor es: 21
+
+# Resumen del Tema 3: "Characterizing Running Times" (Cormen et al., 2022)
+
+En "Introduction to Algorithms" de Cormen et al., el Capítulo 3, "Characterizing Running Times" (Caracterización de los Tiempos de Ejecución), se centra en la importancia de analizar la eficiencia de los algoritmos utilizando la notación asintótica. En lugar de calcular el tiempo de ejecución exacto de un algoritmo, que a menudo es complejo y no es crucial para entradas grandes, este capítulo enfatiza la "tasa de crecimiento" del tiempo de ejecución.
+
+Los puntos clave incluyen:
+
+* Eficiencia Asintótica: El objetivo principal es entender cómo el tiempo de ejecución de un algoritmo aumenta con el tamaño de la entrada (n) a medida que n tiende a infinito. Para entradas lo suficientemente grandes, las constantes multiplicativas y los términos de orden inferior en la función de tiempo de ejecución se vuelven insignificantes en comparación con el término dominante relacionado con n.
+* Notación Asintótica: Introduce las notaciones asintóticas estándar para simplificar el análisis de algoritmos. Las más relevantes son:
+* Notación Big-O (O): Proporciona un límite superior para el tiempo de ejecución de un algoritmo. Se utiliza para describir el peor escenario o el límite máximo del tiempo de ejecución.
+* Notación Omega (Ω): Define un límite inferior para el tiempo de ejecución, describiendo el mejor escenario.
+* Notación Theta (Θ): Ofrece un límite ajustado (tanto superior como inferior) para el tiempo de ejecución, lo que significa que el tiempo de ejecución del algoritmo se encuentra dentro de un factor constante de la función dada para entradas suficientemente grandes.
+
+En resumen, el capítulo enseña cómo la notación asintótica permite comparar algoritmos basándose en cómo su tiempo de ejecución escala con el tamaño de la entrada, siendo una herramienta fundamental para predecir el rendimiento en escenarios del mundo real.
+
+
