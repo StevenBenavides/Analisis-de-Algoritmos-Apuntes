@@ -253,6 +253,8 @@ A = [4, 17, 3, 21, 8]
 
 El número mayor es: 21
 
+
+
 # Resumen del Tema 3: "Characterizing Running Times" (Cormen et al., 2022)
 
 En "Introduction to Algorithms" de Cormen et al., el Capítulo 3, "Characterizing Running Times" (Caracterización de los Tiempos de Ejecución), se centra en la importancia de analizar la eficiencia de los algoritmos utilizando la notación asintótica. En lugar de calcular el tiempo de ejecución exacto de un algoritmo, que a menudo es complejo y no es crucial para entradas grandes, este capítulo enfatiza la "tasa de crecimiento" del tiempo de ejecución.
