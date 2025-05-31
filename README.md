@@ -520,7 +520,7 @@ Por lo tanto, `g(n)` no pertenece a `O(f(n))`.
 
 Este taller tiene como objetivo analizar el comportamiento de un algoritmo recursivo clásico: el cálculo de la sucesión de Fibonacci. Aplicaremos técnicas de análisis de algoritmos, incluyendo el uso de recurrencias y su resolución.
 
-1. Algoritmo de Fibonacci (versión recursiva)
+* Algoritmo de Fibonacci (versión recursiva)
 ```
 def fibonacci(n):
     if n <= 1:
@@ -528,7 +528,7 @@ def fibonacci(n):
     else:
         return fibonacci(n - 1) + fibonacci(n - 2)
 ```
-2. Identificación de la recurrencia
+* Identificación de la recurrencia
 El algoritmo hace dos llamadas recursivas en cada paso (excepto en los casos base). Por lo tanto, el tiempo de ejecución T(n) puede modelarse como:
 
 ```
@@ -536,7 +536,7 @@ T(n) = T(n - 1) + T(n - 2) + Θ(1)
 ```
 Esto representa el costo de hacer dos llamadas recursivas más el trabajo adicional (suma y comparación), que consideramos de tiempo constante Θ(1).
 
-3. Obtención de la ecuación general
+* Obtención de la ecuación general
 Para obtener una solución general a esta recurrencia, ignoramos el término constante y analizamos la forma homogénea:
 
 ```
@@ -583,7 +583,7 @@ T(n) = Θ(φ^n)
 
 Esto significa que el algoritmo crece exponencialmente con respecto a n.
 
-4. Demostración por sustitución (cota inferior)
+* Demostración por sustitución (cota inferior)
 Queremos probar que:
 
 ```
