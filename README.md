@@ -297,16 +297,13 @@ Indica una **cota ajustada** o límite exacto:
 - Esto implica que `f(n)` ∈ `O(g(n))` y `f(n)` ∈ `Ω(g(n))`.
 
 ## Temas Adicionales del Capítulo
-
-### Introducción
-
 Se destaca la importancia de estas notaciones para medir la eficiencia de un algoritmo sin depender del hardware o implementación. Se enfoca en el comportamiento a largo plazo (cuando `n` es grande).
 
-### "El orden de"
+* "El orden de"
 
 Explica cómo las notaciones asintóticas ayudan a clasificar algoritmos según su orden de magnitud de crecimiento, permitiendo una comparación teórica del rendimiento.
 
-### Ejemplos y Demostraciones
+* Ejemplos y Demostraciones
 
 Incluye ejemplos detallados y demostraciones matemáticas para mostrar cómo aplicar correctamente estas notaciones. Se estudian casos comunes para ubicar funciones dentro de su clase de crecimiento asintótico correspondiente.
 
@@ -332,12 +329,12 @@ Si tenemos una secuencia de instrucciones o bloques de código que se ejecutan u
 
 Si el bloque 1 tiene un costo `T1​(n)` y el bloque 2 tiene un costo `T2(n)`, el costo total es `T1(n)+T2(n)`. En términos de notación Big-O, si `T1​(n)=O(f(n)) y T2​(n)=O(g(n))`, entonces el costo de la secuencia es `O(max(f(n),g(n)))`. Es decir, la complejidad viene determinada por la operación más costosa.
 
-## Instrucciones Condicionales (if-else):
+* Instrucciones Condicionales (if-else):
 
 Para una estructura if-else (if (condición) { bloque_then; } else { bloque_else; }), el tiempo de ejecución es el tiempo de evaluar la condición más el tiempo de ejecutar el bloque más costoso entre bloque_then y bloque_else.
 Esto se debe a que solo se ejecuta uno de los dos bloques. Si el costo de la condición es `Tc(n)`, del bloque then es `Tt(n)` y del bloque else es `Te(n)`, el costo es `Tc(n)+max(Tt(n),Te(n))`.
 
-## Instrucciones Iterativas (Bucles for, while, repeat-until):
+* Instrucciones Iterativas (Bucles for, while, repeat-until):
 
 El análisis de los bucles es crucial y generalmente implica multiplicar el número de iteraciones por el costo de las operaciones dentro del cuerpo del bucle.
 
@@ -345,7 +342,7 @@ Bucles for (desde... hasta): Si un bucle for se ejecuta N veces y el cuerpo del 
 
 Bucles while y repeat-until: El análisis de estos bucles requiere determinar cuántas veces se ejecuta la condición del bucle y el cuerpo del bucle. Esto a menudo implica identificar una cantidad que disminuye o que aumenta con cada iteración, para acotar el número total de repeticiones. La complejidad es el número total de iteraciones multiplicado por el costo de cada iteración.
 
-## Llamadas a Procedimientos o Funciones:
+* Llamadas a Procedimientos o Funciones:
 
 Cuando se llama a un procedimiento o función, su costo se añade al costo del algoritmo que lo llama. Si la función llamada tiene una complejidad conocida, se sustituye directamente.
 
@@ -354,7 +351,7 @@ Llamadas Recursivas: El análisis de algoritmos recursivos es más complejo y ge
 3. Consideraciones Adicionales
 Análisis del Caso Peor: El análisis de la complejidad de los algoritmos suele centrarse en el caso peor porque garantiza que el algoritmo nunca tomará más tiempo que esa cota superior, sin importar la entrada específica.
 
-Identificación de la Operación Dominante: En un algoritmo, la complejidad general a menudo está dominada por la estructura de control que se ejecuta más veces o que contiene las operaciones más costosas.
+* Identificación de la Operación Dominante: En un algoritmo, la complejidad general a menudo está dominada por la estructura de control que se ejecuta más veces o que contiene las operaciones más costosas.
 
 En resumen, el capítulo 4.2 de Brassard & Bratley proporciona una metodología para descomponer un algoritmo en sus estructuras de control básicas y sumar o multiplicar sus costos para determinar la complejidad algorítmica. Es la base práctica para aplicar los conceptos teóricos de la notación asintótica.
 
