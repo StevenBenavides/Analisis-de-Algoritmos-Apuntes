@@ -1,8 +1,7 @@
 # Analisis-de-Algoritmos-Apuntes
 En este Git se agregaran apuntes de la materia de análisis de algoritmos 
 
-
-# Apuntes: El Rol de los Algoritmos en la Computación
+# Tema: 1. The Role of Algorithms in Computing; Subtemas: 1.1 Algorithms y 1.2 Algorithms as a technology (Cormen et al., 2022). Leer el tema: Capítulo 1: Preliminares (Brassard & Bratley, 2006))
 
 **Basado en:**
 - Cormen et al., 2022 - *Introduction to Algorithms* (Capítulo 1)
@@ -268,6 +267,97 @@ Los puntos clave incluyen:
 * Notación Theta (Θ): Ofrece un límite ajustado (tanto superior como inferior) para el tiempo de ejecución, lo que significa que el tiempo de ejecución del algoritmo se encuentra dentro de un factor constante de la función dada para entradas suficientemente grandes.
 
 En resumen, el capítulo enseña cómo la notación asintótica permite comparar algoritmos basándose en cómo su tiempo de ejecución escala con el tamaño de la entrada, siendo una herramienta fundamental para predecir el rendimiento en escenarios del mundo real.
+
+
+# Tema 3. Notación Asintótica (Brassard & Bratley, 2006)
+
+El Capítulo 3 se enfoca en la **Notación Asintótica**, una herramienta esencial para el análisis de algoritmos. Estas notaciones permiten describir cómo crece el consumo de recursos (tiempo o espacio) a medida que el tamaño de la entrada aumenta.
+
+## Notaciones Asintóticas Principales
+
+### Notación Big-O (O mayúscula)
+
+Se utiliza para expresar una **cota superior** del tiempo de ejecución de un algoritmo. Formalmente, si una función `f(n)` pertenece a `O(g(n))`, esto indica que:
+
+- `f(n)` no crece más rápido que `g(n)` para valores suficientemente grandes de `n`.
+- `g(n)` actúa como un límite superior asintótico de `f(n)` (ignorando constantes).
+
+### Notación Omega (Ω mayúscula)
+
+Representa una **cota inferior** en el tiempo de ejecución:
+
+- Si `f(n)` pertenece a `Ω(g(n))`, significa que `f(n)` crece al menos tan rápido como `g(n)` para `n` suficientemente grandes.
+- `g(n)` es una cota inferior de `f(n)`.
+
+### Notación Theta (Θ mayúscula)
+
+Indica una **cota ajustada** o límite exacto:
+
+- Si `f(n)` está en `Θ(g(n))`, entonces `f(n)` y `g(n)` crecen al mismo ritmo para `n` grandes.
+- Esto implica que `f(n)` ∈ `O(g(n))` y `f(n)` ∈ `Ω(g(n))`.
+
+## Temas Adicionales del Capítulo
+
+### Introducción
+
+Se destaca la importancia de estas notaciones para medir la eficiencia de un algoritmo sin depender del hardware o implementación. Se enfoca en el comportamiento a largo plazo (cuando `n` es grande).
+
+### "El orden de"
+
+Explica cómo las notaciones asintóticas ayudan a clasificar algoritmos según su orden de magnitud de crecimiento, permitiendo una comparación teórica del rendimiento.
+
+### Ejemplos y Demostraciones
+
+Incluye ejemplos detallados y demostraciones matemáticas para mostrar cómo aplicar correctamente estas notaciones. Se estudian casos comunes para ubicar funciones dentro de su clase de crecimiento asintótico correspondiente.
+
+## Conclusión
+
+El Capítulo 3 proporciona una base conceptual y matemática para el análisis riguroso de algoritmos. Las notaciones Big-O, Omega y Theta son herramientas clave para evaluar y comparar la eficiencia algorítmica en función del crecimiento de entrada.
+
+# Tema: 4.2 Análisis de las estructuras de control (pág: 111-117). (G. Brassard y P. Bratley, 2000).
+
+El tema se centra en cómo determinar la complejidad temporal (y a menudo espacial) de un algoritmo basándose en las estructuras de control que lo componen. Este análisis es fundamental para comprender la eficiencia de un algoritmo y se complementa con la notación asintótica (Big-O, Omega, Theta) para expresar los resultados.
+
+A continuación, un resumen de los puntos clave que se suelen abordar en este apartado:
+
+1. Principio Fundamental: Costo de las Operaciones Elementales
+El análisis comienza por identificar las operaciones elementales dentro de un algoritmo. Una operación elemental es aquella que se considera de costo constante (O(1)) en tiempo de ejecución, como una asignación, una comparación, una operación aritmética básica, o un acceso a un elemento de un arreglo. La complejidad total del algoritmo se obtiene sumando los costos de todas las operaciones elementales ejecutadas.
+
+2. Análisis de las Estructuras de Control Comunes
+El capítulo detalla cómo el costo total de un algoritmo se ve afectado por las diferentes estructuras de control:
+
+Composición Secuencial (Secuencias de Instrucciones):
+
+Si tenemos una secuencia de instrucciones o bloques de código que se ejecutan uno tras otro (Ej: instrucción1; instrucción2; instrucción3;), el tiempo de ejecución total es la suma de los tiempos de ejecución de cada instrucción o bloque.
+
+Si el bloque 1 tiene un costo `T1​(n)` y el bloque 2 tiene un costo `T2(n)`, el costo total es `T1(n)+T2(n)`. En términos de notación Big-O, si `T1​(n)=O(f(n)) y T2​(n)=O(g(n))`, entonces el costo de la secuencia es `O(max(f(n),g(n)))`. Es decir, la complejidad viene determinada por la operación más costosa.
+
+## Instrucciones Condicionales (if-else):
+
+Para una estructura if-else (if (condición) { bloque_then; } else { bloque_else; }), el tiempo de ejecución es el tiempo de evaluar la condición más el tiempo de ejecutar el bloque más costoso entre bloque_then y bloque_else.
+Esto se debe a que solo se ejecuta uno de los dos bloques. Si el costo de la condición es `Tc(n)`, del bloque then es `Tt(n)` y del bloque else es `Te(n)`, el costo es `Tc(n)+max(Tt(n),Te(n))`.
+
+## Instrucciones Iterativas (Bucles for, while, repeat-until):
+
+El análisis de los bucles es crucial y generalmente implica multiplicar el número de iteraciones por el costo de las operaciones dentro del cuerpo del bucle.
+
+Bucles for (desde... hasta): Si un bucle for se ejecuta N veces y el cuerpo del bucle toma un tiempo constante O(1), la complejidad total del bucle es O(N). Si el cuerpo del bucle tiene una complejidad `Tcuerpo(i)` que depende del contador i, la complejidad total es la suma de `Tcuerpo(i)` para todas las iteraciones.
+
+Bucles while y repeat-until: El análisis de estos bucles requiere determinar cuántas veces se ejecuta la condición del bucle y el cuerpo del bucle. Esto a menudo implica identificar una cantidad que disminuye o que aumenta con cada iteración, para acotar el número total de repeticiones. La complejidad es el número total de iteraciones multiplicado por el costo de cada iteración.
+
+## Llamadas a Procedimientos o Funciones:
+
+Cuando se llama a un procedimiento o función, su costo se añade al costo del algoritmo que lo llama. Si la función llamada tiene una complejidad conocida, se sustituye directamente.
+
+Llamadas Recursivas: El análisis de algoritmos recursivos es más complejo y generalmente se aborda mediante ecuaciones de recurrencia. Se establece una ecuación que describe el tiempo de ejecución de una llamada en función del tiempo de ejecución de las llamadas recursivas internas, y luego se resuelve esta ecuación para obtener la complejidad asintótica. Este tema suele tratarse en una sección posterior, pero se menciona como una estructura de control importante.
+
+3. Consideraciones Adicionales
+Análisis del Caso Peor: El análisis de la complejidad de los algoritmos suele centrarse en el caso peor porque garantiza que el algoritmo nunca tomará más tiempo que esa cota superior, sin importar la entrada específica.
+
+Identificación de la Operación Dominante: En un algoritmo, la complejidad general a menudo está dominada por la estructura de control que se ejecuta más veces o que contiene las operaciones más costosas.
+
+En resumen, el capítulo 4.2 de Brassard & Bratley proporciona una metodología para descomponer un algoritmo en sus estructuras de control básicas y sumar o multiplicar sus costos para determinar la complejidad algorítmica. Es la base práctica para aplicar los conceptos teóricos de la notación asintótica.
+
 
 
 # Talleres 
