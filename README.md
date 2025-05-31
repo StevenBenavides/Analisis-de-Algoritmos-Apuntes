@@ -514,3 +514,111 @@ lim (n → ∞) [ g(n) / f(n) ] = 2ⁿ → ∞
 ```
 
 Por lo tanto, `g(n)` no pertenece a `O(f(n))`.
+
+
+# Taller de recurrencias: Análisis del algoritmo de fibonnacci
+
+Este taller tiene como objetivo analizar el comportamiento de un algoritmo recursivo clásico: el cálculo de la sucesión de Fibonacci. Aplicaremos técnicas de análisis de algoritmos, incluyendo el uso de recurrencias y su resolución.
+
+1. Algoritmo de Fibonacci (versión recursiva)
+```
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+```
+2. Identificación de la recurrencia
+El algoritmo hace dos llamadas recursivas en cada paso (excepto en los casos base). Por lo tanto, el tiempo de ejecución T(n) puede modelarse como:
+
+```
+T(n) = T(n - 1) + T(n - 2) + Θ(1)
+```
+Esto representa el costo de hacer dos llamadas recursivas más el trabajo adicional (suma y comparación), que consideramos de tiempo constante Θ(1).
+
+3. Obtención de la ecuación general
+Para obtener una solución general a esta recurrencia, ignoramos el término constante y analizamos la forma homogénea:
+
+```
+T(n) = T(n - 1) + T(n - 2)
+```
+
+Esta es una recurrencia lineal de segundo orden, idéntica a la definición matemática de los números de Fibonacci. Se puede resolver usando técnicas algebraicas, como asumir una solución de la forma:
+
+```
+T(n) = a^n
+```
+
+Sustituyendo en la ecuación:
+
+```
+a^n = a^(n-1) + a^(n-2)
+→ a^n = a^(n-1)(1 + 1/a)
+→ a^2 = a + 1
+```
+
+Esto nos lleva a resolver la ecuación característica:
+
+```
+a^2 - a - 1 = 0
+```
+
+Soluciones:
+```
+a₁ = (1 + √5)/2 ≈ 1.618... (φ, número áureo)
+a₂ = (1 - √5)/2 ≈ -0.618...
+```
+
+Entonces, la solución general de la recurrencia es:
+
+```
+T(n) = A · a₁^n + B · a₂^n
+```
+
+Donde A y B se determinan según las condiciones iniciales, pero para el análisis asintótico nos quedamos con el término dominante:
+
+```
+T(n) = Θ(φ^n)
+```
+
+Esto significa que el algoritmo crece exponencialmente con respecto a n.
+
+4. Demostración por sustitución (cota inferior)
+Queremos probar que:
+
+```
+T(n) ≥ c · φ^n  (para alguna constante c > 0)
+```
+
+Hipótesis inductiva: Supongamos que para todo k < n, se cumple que T(k) ≥ c · φ^k.
+
+Paso inductivo:
+
+```
+T(n) = T(n-1) + T(n-2)
+     ≥ c · φ^(n-1) + c · φ^(n-2)
+     = c · (φ^(n-1) + φ^(n-2))
+     = c · φ^n        (por definición de φ: φ^n = φ^(n-1) + φ^(n-2))
+```
+
+Esto demuestra que:
+
+```
+T(n) = Ω(φ^n)
+```
+
+Como también demostramos previamente que T(n) = O(φ^n), concluimos que:
+
+```
+T(n) = Θ(φ^n)
+```
+
+Conclusión
+El algoritmo recursivo de Fibonacci es exponencialmente ineficiente, con un tiempo de ejecución de:
+
+```
+Θ(φ^n), donde φ ≈ 1.618
+```
+
+Esto lo convierte en un mal candidato para cálculos grandes, a menos que se optimice con memorización o programación dinámica.
+
