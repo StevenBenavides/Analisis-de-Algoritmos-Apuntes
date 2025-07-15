@@ -47,4 +47,62 @@ Resumen:
 
 Los algoritmos voraces son una heurística poderosa y eficiente cuando las propiedades de elección voraz y subestructura óptima se cumplen. Su enfoque de "tomar lo mejor ahora" los hace atractivos por su simplicidad y velocidad, pero es fundamental entender sus limitaciones y cuándo aplicarlos correctamente.
 
+## 6.4 Grafos: Caminos Mínimos (Brassard & Bratley, 2006)
+En el contexto de los algoritmos voraces, la búsqueda de caminos mínimos en grafos es un problema fundamental y ampliamente estudiado. Un camino mínimo en un grafo con pesos en sus aristas es aquel que, partiendo de un nodo origen, llega a un nodo destino (o a todos los demás nodos) sumando el menor peso posible de las aristas que lo componen.
 
+Definiciones clave:
+* Grafo ponderado: Un grafo donde cada arista tiene asociado un valor numérico (peso o costo). Este peso puede representar distancia, tiempo, costo, etc.
+
+* Camino: Una secuencia de vértices y aristas que conecta dos vértices en el grafo.
+
+* Longitud de un camino: La suma de los pesos de las aristas que componen el camino.
+
+* Camino mínimo: Un camino entre dos vértices cuya longitud es la menor posible.
+
+* El problema del camino mínimo desde una única fuente: El objetivo es encontrar los caminos mínimos desde un vértice de origen dado a todos los demás vértices del grafo. Para esto, los algoritmos voraces son una técnica comúnmente aplicada.
+
+Algoritmos Voraces para Caminos Mínimos: Los dos algoritmos más relevantes y estudiados que utilizan una estrategia voraz para encontrar caminos mínimos son:
+
+1. Algoritmo de Dijkstra
+El algoritmo de Dijkstra es un clásico ejemplo de un algoritmo voraz para encontrar los caminos más cortos desde un único nodo fuente a todos los demás nodos en un grafo con pesos de aristas no negativos.
+
+¿Cómo funciona (idea voraz)?
+
+Inicialización: Se asigna una distancia de 0 al nodo origen y una distancia de infinito a todos los demás nodos. Se mantiene un conjunto de nodos "visitados" o "definitivos".
+
+Iteración voraz: En cada paso, el algoritmo selecciona el nodo no visitado con la distancia más pequeña conocida desde el origen. Esta es la elección voraz: se asume que este nodo ya tiene su distancia mínima final, ya que no hay forma de acortar su camino pasando por otros nodos que aún no han sido procesados (porque si los hubiera, su distancia sería menor y ya habrían sido seleccionados).
+
+Actualización (Relajación): Una vez seleccionado el nodo, se examinan todos sus vecinos. Para cada vecino, se calcula una nueva distancia tentativa sumando la distancia del nodo actual más el peso de la arista que los conecta. Si esta nueva distancia es menor que la distancia actual del vecino, se actualiza la distancia del vecino.
+
+Repetición: Los pasos 2 y 3 se repiten hasta que todos los nodos sean visitados o hasta que no haya más nodos alcanzables.
+
+Propiedades que lo hacen voraz y correcto:
+
+Elección voraz: En cada paso, se elige el vértice con la etiqueta de distancia mínima entre los vértices no visitados. Esta elección es óptima localmente.
+
+Subestructura óptima: Si un camino P_uv es un camino mínimo de u a v, y w está en P_uv, entonces el subcamino P_u es un camino mínimo de u a w.
+
+Limitaciones:
+
+No funciona con pesos negativos en las aristas: Si existen aristas con pesos negativos, el algoritmo de Dijkstra puede dar resultados incorrectos. Esto se debe a que la suposición de que la primera vez que se visita un nodo, su distancia es la mínima, ya no es válida si un camino más largo, que incluye una arista negativa, podría llevar a un camino final más corto.
+
+2. Algoritmo de Bellman-Ford
+A diferencia de Dijkstra, el algoritmo de Bellman-Ford sí puede manejar grafos con pesos de aristas negativos. Aunque también resuelve el problema del camino más corto desde una única fuente, no es puramente voraz en el mismo sentido que Dijkstra, ya que no toma una única "mejor" decisión en cada paso que sea irrevocablemente localmente óptima. Sin embargo, su proceso de relajación iterativa se basa en una idea similar de mejora progresiva.
+
+¿Cómo funciona (idea de relajación iterativa)?
+
+Inicialización: Al igual que Dijkstra, se asigna 0 al nodo origen y infinito a los demás.
+
+Relajación iterativa: El algoritmo itera ∣V∣−1 veces (donde ∣V∣ es el número de vértices). En cada iteración, se recorren todas las aristas del grafo. Para cada arista (u,v) con peso w(u,v):
+
+Si distancia[u]+w(u,v)<distancia[v], entonces se actualiza distancia[v] a distancia[u]+w(u,v). Esto se conoce como "relajación" de la arista.
+
+Detección de ciclos negativos: Después de las ∣V∣−1 iteraciones, se realiza una iteración adicional. Si durante esta iteración se puede seguir relajando alguna arista (es decir, distancia[u]+w(u,v)<distancia[v] para alguna arista (u,v)), significa que el grafo contiene un ciclo de peso negativo accesible desde el origen. En este caso, no existe un camino mínimo bien definido (porque se podría recorrer el ciclo negativo infinitas veces para disminuir la distancia indefinidamente).
+
+¿Por qué es importante considerar Bellman-Ford aquí?
+
+Aunque Bellman-Ford no es un algoritmo voraz "puro" en el sentido de una elección localmente óptima e irrevocable en cada paso, se basa en la idea de relajación, que es una forma de optimización incremental. En el contexto de los caminos mínimos, ambos algoritmos son fundamentales y a menudo se estudian en conjunto para ilustrar diferentes enfoques a problemas de optimización en grafos. Brassard y Bratley lo incluyen en esta sección por su relevancia en la resolución de caminos mínimos, incluso si su clasificación como "voraz" es más matizada que la de Dijkstra.
+
+Conclusión:
+
+Los algoritmos voraces, como el de Dijkstra, son una herramienta poderosa para encontrar caminos mínimos en grafos, siempre que los pesos de las aristas sean no negativos. Cuando existen pesos negativos, el algoritmo de Bellman-Ford se convierte en la solución preferida, aunque su enfoque de relajación iterativa difiere sutilmente del modelo voraz estricto de Dijkstra. Comprender ambos es crucial para abordar eficazmente los problemas de caminos mínimos en la teoría de grafos.
