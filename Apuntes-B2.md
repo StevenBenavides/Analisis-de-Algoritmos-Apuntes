@@ -3,7 +3,7 @@
 * Cormen et al., 2022 - Introduction to Algorithms 
 * Brassard & Bratley, 2006 - Fundamentals of Algorithmics 
 
-## Algoritmos Voraces (Brassard & Bratley, 2006)
+## Tema 6: Algoritmos Voraces (Brassard & Bratley, 2006)
 Los algoritmos voraces (o greedy algorithms) son una estrategia algorítmica que construye una solución a un problema tomando la mejor elección posible en cada paso, con la esperanza de encontrar una solución óptima global. En otras palabras, en cada etapa de la construcción de la solución, se elige el elemento que parece más prometedor en ese momento, sin considerar las consecuencias futuras de esa elección.
 
 Características clave:
