@@ -252,3 +252,39 @@ El análisis de algoritmos probabilistas a menudo implica el uso de conceptos de
 Resumen:
 
 Los algoritmos probabilistas son una herramienta poderosa y elegante en la algoritmia, que ofrecen ventajas en términos de simplicidad y eficiencia para una variedad de problemas. Al introducir la aleatoriedad, pueden sortear las limitaciones de los algoritmos deterministas puros, ya sea garantizando la corrección con un tiempo esperado eficiente (Las Vegas) o proporcionando una respuesta rápida con una probabilidad controlada de error (Monte Carlo). Su estudio es fundamental para comprender las fronteras del diseño de algoritmos eficientes.
+
+
+# Talleres Segundo Bimestre 
+
+## Algoritmo de PRIM - Grafos
+
+Grafo no Dirigido
+
+![WhatsApp Image 2025-07-21 at 7 39 24 PM](https://github.com/user-attachments/assets/1d41cbe0-e7d9-4fac-bd27-83e5680c2d9e)
+
+Grafo Dirigido
+
+![WhatsApp Image 2025-07-21 at 7 40 24 PM](https://github.com/user-attachments/assets/339b3774-add7-4c5c-b9c6-28e04a17184c)
+
+
+## Prueba de Escritorio - Merge Sort
+<img width="484" height="634" alt="image" src="https://github.com/user-attachments/assets/84cfe4ff-ca5f-498a-b229-c6623b006d8b" />
+
+
+![WhatsApp Image 2025-07-21 at 7 45 33 PM](https://github.com/user-attachments/assets/77281a1e-50e2-420a-8516-00d41969bc04)
+
+![WhatsApp Image 2025-07-21 at 7 45 33 PM (1)](https://github.com/user-attachments/assets/1c3a7c4b-2efd-4fbb-86f3-f05e808608ce)
+
+![WhatsApp Image 2025-07-21 at 7 45 33 PM (2)](https://github.com/user-attachments/assets/04bd7436-3534-4e85-8f7a-0b332dbbb69d)
+
+## Prueba de Escritorio - Divide y Venceras
+
+![WhatsApp Image 2025-07-21 at 7 52 16 PM](https://github.com/user-attachments/assets/f3c605de-a1c0-4639-85a9-686358fa5fe6)
+
+## Prueba de Escritorio - Algoritmo QuickSort
+
+![WhatsApp Image 2025-07-21 at 7 56 53 PM](https://github.com/user-attachments/assets/cd0c8882-a60e-4470-aeb3-9975c802f8aa)
+
+![WhatsApp Image 2025-07-21 at 7 56 53 PM (1)](https://github.com/user-attachments/assets/ab1cbb9b-81fa-4fb8-97be-1c9cd3f2f9cd)
+
+
